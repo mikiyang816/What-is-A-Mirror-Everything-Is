@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is a Mirror?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .mirror-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #mirror {
+            width: 300px; 
+            height: 200px; 
+            background-color: red; 
+            border: 1px solid #000;
+            margin-right: 20px;
+        }
+
+        #camera {
+            width: 300px; 
+            height: 200px; 
+            background-color: grey; 
+            border: 1px solid #000;
+            transform: scaleX(-1); 
+        }
+
+        #inspo {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #phrase {
+            font-size: 24px;
+            color: #ff6703; 
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>What is a Mirror?</h1>
+    <h2>Everything is a mirror. -Song Dong</h2>
+
+    <div class="mirror-container">
+        <div id="mirror"></div>
+        <video id="camera" autoplay playsinline></video>
+    </div>
+
+    <div id="inspo">Inspo</div>
+    <div id="phrase"></div>
+
+    <script>
+        const phrases = ["loving cat", "cute cloud", "colorful flower", "peaceful ocean"]; 
+        const phraseElement = document.getElementById("phrase");
+
+        function generateRandomPhrase() {
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            phraseElement.textContent = phrases[randomIndex];
+        }
+
+        generateRandomPhrase();
+    </script>
+</body>
+</html>
